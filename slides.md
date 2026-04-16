@@ -427,6 +427,81 @@ The final 'fully open source' — slow down. It matters to both halves of the ro
 </div>
 
 
+---
+layout: default
+---
+
+# Contributions — Architecture
+
+<ContribArchSlide />
+
+---
+layout: iframe
+url: www.becodingcafe.com
+---
+
+
+
+
+---
+layout: two-cols
+---
+
+# Semantic Ontology
+
+The platform is backed by a **formal RDF/OWL ontology** (`rhdt.ttl`) that defines all domain concepts:
+
+<br/>
+
+**Core Classes**
+- `InterventionScenario` — bundled plan
+- `InterventionArea` — individual polygon + type
+- `RasterScenario` — simulation output folder
+- `AggregationArea` — neighborhoods / catchments
+- `BaseScenario` — reference flood event
+
+<br/>
+
+**Why an Ontology?**
+- Enables **linked data** and SPARQL queries
+- Supports **interoperability** with external GIS/BIM systems
+- Provides formal validation of domain logic
+- Foundation for **knowledge graph** extensions
+
+::right::
+
+<!--
+[IMAGE PLACEHOLDER: OWL class hierarchy diagram rendered as a tree/graph.
+Root node: "RHT Domain" → branches to:
+  InterventionScenario → (hasCity, hasClimateScenario, includesIntervention)
+  InterventionArea → (hasInterventionType, geoJson)
+  RasterScenario → (containsFrame, variable, timestamp)
+  AggregationArea → (hasAggregationType, coversArea)
+Use rounded rectangles for classes, labelled arrows for object properties.
+Color-code by class type. Dark slate background.]
+-->
+
+<div class="mt-4 text-xs font-mono bg-slate-900 rounded-lg p-4 text-green-300">
+
+```turtle
+:InterventionScenario a owl:Class ;
+  rdfs:label "Intervention Scenario" .
+
+:includesIntervention a owl:ObjectProperty ;
+  rdfs:domain :InterventionScenario ;
+  rdfs:range  :InterventionArea .
+
+:hasCity a owl:ObjectProperty ;
+  rdfs:range :City .
+
+:Rotterdam a :City ;
+  rdfs:label "Rotterdam, NL" .
+
+:Chennai a :City ;
+  rdfs:label "Chennai, India" .
+```
+
+</div>
 
 ---
 
@@ -435,33 +510,23 @@ The final 'fully open source' — slow down. It matters to both halves of the ro
 
 <div class="grid grid-cols-2 gap-8 mt-6">
 
-<div class="bg-slate-800 rounded-xl p-6">
+<div class="border rounded-xl p-6">
   <div class="text-blue-300 font-bold mb-3">Participatory Digital Twin</div>
-  <p class="text-sm text-slate-300">
+  <p class="text-sm">
     Extends traditional simulation models with an <strong>interactive, web-based planning layer</strong> that enables non-expert stakeholders to co-design flood interventions — bridging the gap between hydrology and urban governance.
   </p>
 </div>
 
-<div class="bg-slate-800 rounded-xl p-6">
-  <div class="text-green-300 font-bold mb-3">Semantic Interoperability</div>
-  <p class="text-sm text-slate-300">
-    An OWL ontology formally represents the domain, enabling <strong>linked data integration</strong> with GIS, BIM, and climate datasets — supporting multi-city, multi-model extensibility.
-  </p>
-</div>
 
-<div class="bg-slate-800 rounded-xl p-6">
+
+<div class="border rounded-xl p-6">
   <div class="text-orange-300 font-bold mb-3">Real-Time Raster Streaming</div>
-  <p class="text-sm text-slate-300">
+  <p class="text-sm">
     COG + TiTiler architecture enables <strong>sub-second tile rendering</strong> of large GeoTIFF outputs without pre-tiling or data duplication — scalable to city-wide datasets.
   </p>
 </div>
 
-<div class="bg-slate-800 rounded-xl p-6">
-  <div class="text-purple-300 font-bold mb-3">Comparative Resilience Scoring</div>
-  <p class="text-sm text-slate-300">
-    Quantitative before/after assessment at <strong>neighborhood and district scale</strong> across water depth, velocity, and economic damage — enabling evidence-based intervention prioritization.
-  </p>
-</div>
+
 
 </div>
 
@@ -496,15 +561,12 @@ simulation outputs.
 
   
 
-
-[PAUSE — 2 full seconds]
-
 -->
 
 
 ---
 
-# Future
+# Thank you
 
 <!--
 
