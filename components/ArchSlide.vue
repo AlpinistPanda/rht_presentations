@@ -2,7 +2,6 @@
   <div class="w-full h-full flex flex-col justify-center px-6 py-2 font-sans text-gray-900 select-none">
 
     <!-- ── Title row ── -->
-    <p class="text-[10px] uppercase tracking-[0.16em] text-gray-400 mb-2 font-semibold">System Architecture</p>
 
     <!-- ══════════════════════════════════════════════════════
          TOP ROW — External models & data sources

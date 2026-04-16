@@ -1,8 +1,6 @@
 <template>
   <div class="w-full h-full bg-gray-50 flex flex-col justify-center px-6 py-4 font-sans select-none">
 
-    <p class="text-[10px] uppercase tracking-[0.18em] text-gray-400 mb-3 font-semibold">Software Engineering Contributions</p>
-
     <!-- ── Bento grid: 3 cols × 3 rows ── -->
     <div class="grid grid-cols-3 grid-rows-3 gap-3 flex-1 min-h-0">
 
@@ -23,7 +21,7 @@
         </div>
         <!-- Image placeholder -->
         <div class="img-placeholder" style="min-width:110px; border-color:#7dd3fc;">
-          <img v-if="false" src="" alt="" class="w-full h-full object-cover rounded-lg"/>
+          <img v-if="false" src="/img/github.png" alt="" class="w-full h-full object-cover rounded-lg"/>
           <div class="placeholder-inner">
             <span class="placeholder-icon">📄</span>
             <span class="placeholder-label">FAIR4RS paper</span>
@@ -45,11 +43,7 @@
         </div>
         <!-- Image placeholder -->
         <div class="img-placeholder flex-1 mt-2" style="border-color:#334155; background:#1e293b;">
-          <img v-if="false" src="" alt="" class="w-full h-full object-cover rounded-lg"/>
-          <div class="placeholder-inner">
-            <span class="placeholder-icon">🐙</span>
-            <span class="placeholder-label" style="color:#64748b;">GitHub screenshot</span>
-          </div>
+          <img src="/img/github.png" alt="GitHub" class="w-full h-full object-cover rounded-lg"/>
         </div>
       </div>
 
