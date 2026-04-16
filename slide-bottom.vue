@@ -18,6 +18,13 @@
   </footer>
 </template>
 
+<style>
+/* Push every slide's content area up so the footer never overlaps it */
+.slidev-layout {
+  padding-bottom: 40px !important;
+}
+</style>
+
 <style scoped>
 .slidev-footer {
   position: absolute;
