@@ -322,6 +322,13 @@ then immediately pivot: 'that number is not the point.' Stillness on that line.
 
 ---
 
+
+<iframe width="800" height="400" src="https://www.youtube.com/embed/ufUkOoswczs?si=U22aPF7pZEYT4nDr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+---
+
 # Demo alternative -- Authentication
 
 <img src="/img/admin.png">
